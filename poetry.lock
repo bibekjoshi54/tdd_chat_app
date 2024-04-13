@@ -149,7 +149,21 @@ pytest = ">=6.2.5"
 [package.extras]
 dev = ["pre-commit", "pytest-asyncio", "tox"]
 
+[[package]]
+name = "pytest-unordered"
+version = "0.6.0"
+description = "Test equality of unordered collections in pytest"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pytest-unordered-0.6.0.tar.gz", hash = "sha256:f61b4f6e06a60a92db50968954efac93e2f584290a49f53ad135e3f32f57e02a"},
+    {file = "pytest_unordered-0.6.0-py3-none-any.whl", hash = "sha256:86675cade320d1c54864fedd10c2277f685bf2d958ef744c578b3d622000f2ac"},
+]
+
+[package.dependencies]
+pytest = ">=7.0.0"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "430126fb75371dfe33f6c2c7757229c220ca5970dfbbf16d6a0a7532262cfc6c"
+content-hash = "9e0377d700d2ab5b0bb6f8fd875599effd893206f6bab199fe4f6fa906113748"

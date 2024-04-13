@@ -1,4 +1,4 @@
-# Simple URL shortner using basic postgres sharding 
+# Simple TDD Chat Application
 
 
 Warning:
@@ -10,12 +10,14 @@ Warning:
 
 
 ## Project Description
-Simple python application using the python and postgres to implement the url shortner
+Simple practice for writing the TDD based chat application.
+
+The project is missing typing.
 
 
 NOTE:
 - Some command might not be working as of now.
-- Currently I am trying to setup the project structure and boilerplate clode.
+- Currently, I am trying to set up the project structure and boilerplate clode.
 
 ### Make Commands
 - `make setup`: Setups the development environment
@@ -31,9 +33,9 @@ The docker image would not have development and test dependencies installed, and
 To test inside the container you can use the docker compose.
 
 **Warning**
-I have made the UID and GUID as configrable in docker image to run the tests and coverage report. In production make sure to make this as static or have a seperate docker image for production
+I have made the UID and GUID as configurable in docker image to run the tests and coverage report. In production make sure to make this as static or have a seperate docker image for production
 
-- `HOST_UID=$(id -u) HOST_GID=$(id -g) docker build --build-arg UID=$HOST_UID --build-arg GID=$HOST_GID -t tdd_chat_app_app:latest . ` 
+- `export HOST_UID=$(id -u) && export HOST_GID=$(id -g) && docker build --build-arg UID=$HOST_UID --build-arg GID=$HOST_GID -t tdd_chat_app_app:latest .` 
 - To quickly run above command: `./scripts/build-docker.sh`
 - `docker compose run unit_tests`: Runs the unit_tests inside the container.
 
