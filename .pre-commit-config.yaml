@@ -1,0 +1,36 @@
+default_language_version:
+    python: python3.12
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-toml
+    -   id: check-yaml
+        args:
+        -   --unsafe
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+
+-   repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.1.2
+    hooks:
+    -   id: ruff
+        args:
+        - --fix
+    -   id: ruff-format
+- repo: https://github.com/RobertCraigie/pyright-python
+  rev: v1.1.357
+  hooks:
+      - id: pyright
+        additional_dependencies:
+            - "pydantic==2.6.0"
+            - "pytest==8.0.0"
+            - "pydantic-extra-types==2.6.0"
+            - "sqlalchemy==2.0.28"
+            - "fastapi==0.110.0"
+            - "pydantic-settings==2.2.1"
+            - "uvicorn==0.28.0"
+ci:
+    autofix_commit_msg: 🎨 [pre-commit.ci] Auto format from pre-commit.com hooks
+    autoupdate_commit_msg: ⬆ [pre-commit.ci] pre-commit autoupdate

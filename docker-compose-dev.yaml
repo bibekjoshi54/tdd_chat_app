@@ -1,0 +1,17 @@
+services:
+
+  unit_tests:
+    build: .
+
+    image: tdd_chat_app_app:latest
+    container_name: tdd_chat_app_iam_unit_test
+    volumes:
+      - ./reports:/app/reports
+      - ./scripts:/app/scripts
+      - ./tests:/app/tests
+      - ./tdd_chat_app:/app/tdd_chat_app
+      - ./poetry.lock:/app/poetry.lock
+      - ./pyproject.toml:/app/pyproject.toml
+    command: ["bash", "./scripts/docker-entrypoint.sh", "-c"]
+
+  

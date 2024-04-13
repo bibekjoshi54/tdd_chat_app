@@ -1,0 +1,13 @@
+'iam':
+  'enable_module': True
+  'orm_setting':
+    'enable': True
+    'apply_ddl': True
+    # Use the secure source to initialize the database and credentials.
+    # This is just for reference
+    # 'database_uri': 'postgresql+asyncpg://postgres:postgres@localhost/ddd_example'
+    'engine_options':
+      'echo': True
+      'isolation_level': "REPEATABLE READ"
+    'session_manager_param':
+      'expire_on_commit': False
